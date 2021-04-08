@@ -11,7 +11,12 @@ spring:
   resources:
     static-locations: classpath:/static/
 
-server:
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 172.18.68.16:8848
+        
   port: 8021
   tomcat:
     uri-encoding: UTF-8
