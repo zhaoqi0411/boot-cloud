@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: eureka #应用名称
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/static/
+
+server:
+  port: 8011
+  tomcat:
+    uri-encoding: UTF-8
+
+eureka:
+  server:
+    enable-self-preservation: false  #关闭自我保护机制
+    eviction-interval-timer-in-ms: 4000 #设置清理间隔（单位：毫秒 默认是60*1000）
+    instance:
+      hostname: localhost
+  client:
+    register-with-eureka: false   # false表示自己不需要向注册中心注册自己
+    fetch-registry: false  # false表示自己就是注册中心。我的职责就是维护服务实例，并不需要去检索服务
+    serviceUrl:
+      defaultZone: http://localhost:8011/eureka/  #Eureka Server
+
