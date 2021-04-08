@@ -17,12 +17,14 @@ spring:
         server-addr: 172.18.68.16:8848
       config:
         server-addr: 172.18.68.16:8848
-
+  profiles:
+    active: dev
+    
+server:
   port: 8021
   tomcat:
     uri-encoding: UTF-8
-  profiles:
-    active: dev
+
 
 eureka:
   client:
